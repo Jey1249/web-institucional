@@ -1,5 +1,7 @@
 ---
 // src/layouts/LayoutBase.astro
+import '../styles/global.css';
+import Navbar from '../components/Navbar'; // 👈 Importamos el componente de React
 
 interface Props {
 	titulo: string;
@@ -14,22 +16,19 @@ const { titulo, descripcion = "Sitio web oficial de nuestra institución tecnol�
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content={descripcion} />
 		<title>{titulo} | Instituto Superior</title>
 	</head>
 	
 	<body class="bg-institucional-fondo text-slate-100 min-h-screen flex flex-col antialiased">
 		
-		<header class="w-full p-4 text-center text-xs text-slate-500 border-b border-institucional-componente bg-institucional-superficie/50 backdrop-blur-md sticky top-0 z-50">
-			[Espacio Reservado para el Navbar Interactivo]
-		</header>
+		<Navbar client:load />
 
 		<main class="flex-grow">
 			<slot /> 
 		</main>
 
 		<footer class="border-t border-institucional-componente bg-institucional-superficie/30 py-6 text-center text-sm text-slate-500">
-			<p>&copy; {new Date().getFullYear()} Instituto Superior Tecnológico. Desarrollado con Astro + React.</p>
+			<p>&copy; {new Date().getFullYear()} Instituto Superior Tecnológico. Construido con Astro + React.</p>
 		</footer>
 
 	</body>
