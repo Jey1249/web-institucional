@@ -1,31 +1,23 @@
 ---
-//Importamos el componente de React
-import BotonProps from "../components/botonprueba";
+// src/pages/index.astro
+import LayoutBase from '../layouts/LayoutBase.astro';
 import "../styles/global.css";
 ---
 
-<html lang="es">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Prueba Inicial - Web Institucional</title>
-	</head>
-	<body class="bg-slate-900 min-h-screen flex flex-col items-center justify-center font-sans p-4">
-		
-		<main class="text-center max-w-md w-full space-y-6">
-			<h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400 tracking-tight">
-				Proyecto Institucional
-			</h1>
-			<p class="text-slate-400 text-sm">
-				Astro + React + Tailwind + TypeScript funcionando correctamente.
-			</p>
+<LayoutBase titulo="Inicio" descripcion="Bienvenidos a la plataforma institucional moderna de nuestro instituto.">
+	
+	<section class="min-h-[70vh] flex flex-col items-center justify-center text-center p-6 space-y-4">
+		<h1 class="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-500">
+			Educación Tecnológica Superior
+		</h1>
+		<p class="text-slate-400 max-w-md text-base md:text-lg">
+			Un entorno digital seguro, veloz y de código limpio diseñado para nuestra comunidad.
+		</p>
+		<div class="pt-4">
+			<span class="px-4 py-2 rounded-full text-xs font-semibold bg-institucional-acento/10 text-institucional-acento border border-institucional-acento/30">
+				Estilo Minimalista Activo
+			</span>
+		</div>
+	</section>
 
-			<BotonProps
-			
-			
-			client:load texto="¡Hacer Clic!" />
-		</main>
-
-	</body>
-</html>
+</LayoutBase>

@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@theme {
+  --color-institucional-fondo: #020617;
+  --color-institucional-superficie: #0f172a;
+  --color-institucional-componente: #1e293b;
+  --color-institucional-acento: #06b6d4;
+}
