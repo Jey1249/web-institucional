@@ -1,23 +1,12 @@
 ---
 // src/pages/index.astro
 import LayoutBase from '../layouts/LayoutBase.astro';
+import Hero from '../components/Hero.astro';
 import "../styles/global.css";
 ---
 
-<LayoutBase titulo="Inicio" descripcion="Bienvenidos a la plataforma institucional moderna de nuestro instituto.">
+<LayoutBase titulo="Inicio" descripcion="Bienvenidos a la plataforma digital oficial de nuestra institución de educación superior.">
 	
-	<section class="min-h-[70vh] flex flex-col items-center justify-center text-center p-6 space-y-4">
-		<h1 class="text-4xl md:text-5xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-500">
-			Educación Tecnológica Superior
-		</h1>
-		<p class="text-slate-400 max-w-md text-base md:text-lg">
-			Un entorno digital seguro, veloz y de código limpio diseñado para nuestra comunidad.
-		</p>
-		<div class="pt-4">
-			<span class="px-4 py-2 rounded-full text-xs font-semibold bg-institucional-acento/10 text-institucional-acento border border-institucional-acento/30">
-				Estilo Minimalista Activo
-			</span>
-		</div>
-	</section>
+	<Hero />
 
 </LayoutBase>
