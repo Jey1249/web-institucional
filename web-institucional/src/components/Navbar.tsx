@@ -13,7 +13,7 @@ export default function Navbar() {
           {/* Logo del Instituto */}
           <div className="flex-shrink-0">
             <span className="text-xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">
-              INSTITUTO<span className="text-institucional-acento">.</span>
+              <span className="text-institucional-acento">-</span>INSTITUTO<span className="text-institucional-acento">-</span>
             </span>
           </div>
 
