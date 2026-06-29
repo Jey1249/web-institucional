@@ -3,10 +3,92 @@
 import LayoutBase from '../layouts/LayoutBase.astro';
 import Hero from '../components/Hero.astro';
 import "../styles/global.css";
+
+// 1. Definimos la interfaz de TypeScript para la estructura de cada carrera
+interface Carrera {
+  titulo: string;
+  descripcion: string;
+  duracion: string;
+  siglas: string;
+}
+
+// 2. Simulamos los datos reales del instituto (Fácilmente editables en el futuro)
+const carreras: Carrera[] = [
+  {
+    titulo: "Desarrollo de Sistemas",
+    descripcion: "Especialízate en la arquitectura, creación y despliegue de aplicaciones web y móviles utilizando tecnologías modernas de código limpio.",
+    duracion: "3 Años",
+    siglas: "DS"
+  },
+  {
+    titulo: "Ciberseguridad y Redes",
+    descripcion: "Aprende a proteger activos digitales, mitigar vulnerabilidades del sistema y diseñar infraestructuras de red corporativas seguras.",
+    duracion: "3 Años",
+    siglas: "CR"
+  },
+  {
+    titulo: "Desarrollo de Sistemas",
+    descripcion: "Especialízate en la arquitectura, creación y despliegue de aplicaciones web y móviles utilizando tecnologías modernas de código limpio.",
+    duracion: "3 Años",
+    siglas: "DS"
+  },
+  {
+    titulo: "Ciberseguridad y Redes",
+    descripcion: "Aprende a proteger activos digitales, mitigar vulnerabilidades del sistema y diseñar infraestructuras de red corporativas seguras.",
+    duracion: "3 Años",
+    siglas: "CR"
+  },
+  {
+    titulo: "Diseño y Desarrollo de Videojuegos",
+    descripcion: "Domina los motores gráficos líderes de la industria y el flujo de diseño interactivo para crear experiencias inmersivas multiplataforma.",
+    duracion: "3 Años",
+    siglas: "DV"
+  }
+];
 ---
 
 <LayoutBase titulo="Inicio" descripcion="Bienvenidos a la plataforma digital oficial de nuestra institución de educación superior.">
 	
 	<Hero />
+
+	<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 border-t border-institucional-componente/40">
+		
+		<div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+			<h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+				Nuestras Carreras Profesionales
+			</h2>
+			<p class="text-slate-400 font-light text-base sm:text-lg">
+				Programas de alta demanda tecnológica diseñados para insertarte con éxito en la industria global.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			{carreras.map((carrera) => (
+				<div class="group relative flex flex-col justify-between p-6 rounded-2xl border border-institucional-componente bg-institucional-superficie/40 backdrop-blur-sm transition-all duration-300 hover:border-institucional-acento/50 hover:bg-institucional-superficie/70 hover:shadow-xl hover:shadow-institucional-acento/5">
+					
+					<div>
+						<div class="w-12 h-12 rounded-xl flex items-center justify-center font-bold text-sm bg-institucional-componente text-institucional-acento border border-institucional-componente/80 group-hover:bg-institucional-acento group-hover:text-slate-950 transition-colors duration-300">
+							{carrera.siglas}
+						</div>
+
+						<h3 class="text-xl font-semibold text-white mt-5 group-hover:text-institucional-acento transition-colors duration-200">
+							{carrera.titulo}
+						</h3>
+						<p class="text-sm text-slate-400 font-light mt-3 leading-relaxed">
+							{carrera.descripcion}
+						</p>
+					</div>
+
+					<div class="flex items-center justify-between pt-6 mt-6 border-t border-institucional-componente/60 text-xs">
+						<span class="text-slate-500 font-medium">Duración</span>
+						<span class="text-slate-300 font-semibold px-2.5 py-0.5 rounded-md bg-institucional-componente">
+							{carrera.duracion}
+						</span>
+					</div>
+				</div>
+			))}
+		</div>
+
+	</section>
 
 </LayoutBase>
